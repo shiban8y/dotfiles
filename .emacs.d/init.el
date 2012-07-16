@@ -33,6 +33,8 @@
 (line-number-mode 1)
 (column-number-mode 1)
 
+(tool-bar-mode 0)
+
 (savehist-mode 1)
 (setq echo-keystrokes 0.1)
 
