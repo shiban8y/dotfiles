@@ -44,6 +44,8 @@
 ;; (require 'auto-complete)
 ;; (global-auto-complete-mode t)
 
+(define-key global-map (kbd "C-o") 'dabbrev-expand)
+
 (require 'anything-startup)
 (define-key global-map (kbd "C-:") 'anything-for-files)
 
