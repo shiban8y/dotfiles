@@ -50,6 +50,7 @@
 
 (require 'anything-startup)
 (define-key global-map (kbd "C-:") 'anything-for-files)
+(define-key global-map (kbd "M-y") 'anything-show-kill-ring)
 
 ;;; Programming Language perl
 (autoload 'cperl-mode "cperl-mode" "alternate mode for editing Perl programs" t)
