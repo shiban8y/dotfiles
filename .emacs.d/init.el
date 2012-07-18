@@ -35,6 +35,8 @@
 
 (tool-bar-mode 0)
 
+(toggle-scroll-bar nil)
+
 (savehist-mode 1)
 (setq echo-keystrokes 0.1)
 
