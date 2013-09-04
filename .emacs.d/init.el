@@ -1,3 +1,32 @@
+;; setup package.el
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; helm
+(require 'helm-config)
+(helm-descbinds-mode)
+(define-key global-map (kbd "C-:") 'helm-for-files)
+(define-key global-map (kbd "M-y") 'helm-show-kill-ring)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; starter-kit
+(require 'starter-kit)
+(require 'starter-kit-perl)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; popwin
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(push '("^\*helm .+\*$" :regexp t) popwin:special-display-config)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; color-theme
+(color-theme-initialize)
+(color-theme-dark-laptop)
+
 (set-face-attribute 'default nil
 		    :family "Ricty"
 		    :height 160)
@@ -13,12 +42,6 @@
 (auto-install-compatibility-setup)
 
 (add-to-list 'default-frame-alist '(font . "ricty-13.5"))
-
-(add-to-list 'load-path "~/.emacs.d/color-theme/")
-(require 'color-theme)
-(require 'color-theme-tango)
-(color-theme-initialize)
-(color-theme-tango)
 
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
@@ -48,9 +71,20 @@
 
 (define-key global-map (kbd "C-o") 'dabbrev-expand)
 
-(require 'anything-startup)
-(define-key global-map (kbd "C-:") 'anything-for-files)
-(define-key global-map (kbd "M-y") 'anything-show-kill-ring)
+;; (require 'anything-startup)
+;; (define-key global-map (kbd "C-:") 'anything-for-files)
+;; (define-key global-map (kbd "M-y") 'anything-show-kill-ring)
+;; (require 'anything-c-moccur)
+;; (setq moccur-split-word t)
+;; (global-set-key (kbd "M-s") 'anything-c-moccur-occur-by-moccur)
+;; ;; インクリメンタルサーチから移行できるように
+;; (define-key isearch-mode-map (kbd "C-o") 'anything-c-moccur-from-isearch)
+;; ;; 旧来のisearch-occurはC-M-oへ引越し
+;; (define-key isearch-mode-map (kbd "C-M-o") 'isearch-occur)
+
+;;; Programming Language php
+(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 
 ;;; Programming Language perl
 (autoload 'cperl-mode "cperl-mode" "alternate mode for editing Perl programs" t)

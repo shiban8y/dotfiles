@@ -35,7 +35,16 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-source $HOME/perl5/perlbrew/etc/bashrc
+# source $HOME/perl5/perlbrew/etc/bashrc
 export NODE_PATH=/usr/local/lib/node_modules
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+if [ -d ${HOME}/.plenv  ] ; then
+  PATH=${HOME}/.plenv/bin/:${HOME}/.plenv/shims:${PATH}
+  export PATH
+  eval "$(plenv init -)"
+fi
