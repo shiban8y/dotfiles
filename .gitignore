@@ -4,4 +4,5 @@
 .emacs.d/tramp
 .emacs.d/auto-save-list/
 .emacs.d/eshell/
+.emacs.d/etc/dict/
 .emacs.d/.recentf
