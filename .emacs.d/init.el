@@ -170,12 +170,13 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 
 
-(setq exec-path (cons "C:/Emacs/libexec/emacs/24.5/x86_64-pc-mingw32" exec-path))
+(setq migemo-home "C:/ProgramData/chocolatey/lib/Emacs/tools/emacs/libexec/emacs/26.2/x86_64-w64-mingw32")
+(setq exec-path (cons migemo-home exec-path))
 
 (require 'migemo)
 (setq migemo-command "cmigemo")
 (setq migemo-options '("-q" "--emacs" "-i" "\a"))
-(setq migemo-dictionary "C:/Users/SV48723/AppData/Roaming/.emacs.d/etc/dict/utf-8/migemo-dict")
+(setq migemo-dictionary (concat migemo-home "/dict/utf-8/migemo-dict"))
 
 (setq migemo-user-dictionary nil)
 (setq migemo-regex-dictionary nil)
