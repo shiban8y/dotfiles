@@ -104,12 +104,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; color-theme
-(require 'color-theme)
-;; (require 'color-theme-tango)
-;; (require 'color-theme-heroku)
-(color-theme-initialize)
-;; (color-theme-tango)
-(color-theme-dark-laptop)
+(load-theme 'jbeans t)
 
 ;; (require 'hl-line+)
 ;; (global-linum-mode t)
