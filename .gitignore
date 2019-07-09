@@ -1,0 +1,6 @@
+.emacs.d/elpa/
+.emacs.d/history
+.emacs.d/bookmarks
+.emacs.d/tramp
+.emacs.d/auto-save-list/
+.emacs.d/eshell/
