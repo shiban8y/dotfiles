@@ -160,13 +160,10 @@
          (setq truncate-lines nil))))
 
 (setq org-capture-templates
-   '(("t" "Task" entry (file (expand-file-name (concat org-directory "/task.org")))
-      "* TODO %?\n    %i\n   %a\n    %T")
-     ("n" "note" entry (file (expand-file-name (concat org-directory "/notes.org")))
-      "* %?\n   %a\n    %T")
-     ("r" "reading" entry (file (expand-file-name (concat org-directory "/reading.org")))
-      "* %?\n   %a\n    %T")))
-
+      '(("t" "Todo" entry (file+headline "~/org/task.org" "Tasks")
+         "* TODO  %?\n  %i\n")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
 (global-set-key (kbd "C-c c") 'org-capture)
 
 
@@ -190,35 +187,7 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/inits")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-capture-templates
-   (quote
-    (("t" "Task" entry
-      (file
-       (expand-file-name
-        (concat org-directory "/task.org")))
-      "* TODO %?
-    %i
-   %a
-    %T")
-     ("n" "note" entry
-      (file
-       (expand-file-name
-        (concat org-directory "/notes.org")))
-      "* %?
-   %a
-    %T")
-     ("r" "reading" entry
-      (file
-       (expand-file-name
-        (concat org-directory "/reading.org")))
-      "* %?
-   %a
-    %T")))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
