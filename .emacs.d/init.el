@@ -78,10 +78,16 @@
   )
 
 (custom-set-variables
- '(helm-mini-default-sources '(helm-source-buffers-list
-                               helm-source-recentf
-                               helm-source-files-in-current-dir
-                               )))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(helm-mini-default-sources
+   (quote
+    (helm-source-buffers-list helm-source-recentf helm-source-files-in-current-dir)))
+ '(package-selected-packages
+   (quote
+    (vue-mode php-mode ddskk ddskk-posframe google-translate org open-junk-file popwin markdown-mode jbeans-theme init-loader helm-migemo helm-descbinds color-theme-modern))))
 
 ;; anything
 ;; (require 'anything-startup)
